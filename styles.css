@@ -1,0 +1,250 @@
+:root {
+  --mintGreen: #54E6AF;
+  --lightGreen: #B3FFE2;
+  --darkGrey: #2C344B;
+  --dark: #121725;
+  --grey: #5A668A;
+  --lightGrey: #C2CBE5;
+  --red: #FB3E3E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Chivo', sans-serif;
+  background-color: var(--dark);
+  min-height: 100vh;
+}
+
+body::before {
+    content:"";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(assets/desktop/bg-pattern-dots.svg), url(assets/desktop/image-host.jpg);
+    background-repeat: no-repeat;
+    background-position: right 90%, right;
+    filter: contrast(85%) saturate(125%);
+    z-index: -100;
+  }
+
+.title {
+  text-transform: uppercase;
+  font-size: 3.25rem;
+  line-height: 119%;
+  color: var(--mintGreen);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.titleSpan {
+  color: var(--lightGrey);
+}
+
+.text {
+  font-size: 1.125rem;
+  line-height: 156%;
+  color: var(--lightGrey);
+  margin-bottom: 2.5rem;
+  width: 65%;
+  font-weight: 300;
+}
+
+.logo {
+  margin-top: 6.375rem;
+  margin-left: 10.31rem;
+}
+
+/* ______JS_TOGGLES________ */
+.errorShown {
+  display:block;
+  position: absolute;
+  margin-top: 6%;
+  margin-left: 2%;
+  color: var(--red);
+  text-align: left;
+}
+.errorHidden {
+  display:none;
+}
+/* ______JS_TOGGLES________ */
+
+
+/* #####################
+######### MAIN ######### */
+main {
+  margin: 7.125rem 0 8.125rem 10rem;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 42rem;
+  height: 32rem;
+  background: var(--dark);
+  padding-top: 5.5rem;
+  padding-right: 3.625rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7%;
+  width: 90%;
+}
+
+.email {
+  border-radius: 25px;
+  padding: 3%;
+  background-color: var(--darkGrey);
+  color: white;
+  flex-basis: 65%;
+}
+
+#email {
+  outline: none;
+  border: none;
+  background-color: var(--darkrey);
+  color: white;
+  font-weight: 900;
+  margin-left: 3%;
+}
+
+::placeholder {
+  color: var(--lightGrey);
+  font-weight: 400;
+}
+
+.btn {
+  border-radius: 25px;
+  background-color: var(--mintGreen);
+  padding: 2% 4%;
+  border: none;
+  cursor: pointer;
+  color: black;
+  font-weight: 900;
+  position: relative;
+  right: 30%;
+  position: relative;
+}
+
+.btn:hover {
+  background-color: var(--lightGreen);
+  transition: 0.5s;
+}
+
+.flexLogos {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-top: 3.125rem;
+    margin-left: 2.375rem;
+    width: 20%;
+  }
+body::before {
+    content:"";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(assets/desktop/bg-pattern-dots.svg), url(assets/tablet/image-host.jpg);
+    background-repeat: no-repeat;
+    background-position: 5% bottom, right top;
+    filter: contrast(85%) saturate(125%);
+    z-index: -100;
+  }
+  main {
+    margin: 0;
+  }
+  .box1 {
+    margin: 9.5rem 5.875rem 16rem 2.5rem;
+    padding-right: 0;
+    width: 82%;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .text {
+    font-size: 1rem;
+  }
+  .flexLogos {
+    margin-top: 5%;
+  }
+  .errorShown {
+    margin-top: 12%;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    margin: 0;
+  }
+  body::before {
+      content:"";
+      width: 100%; height: 100%;
+      background-image: url(assets/mobile/image-host.jpg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top;
+      filter: contrast(40%) brightness(30%) grayscale(50%);
+      z-index: -100;
+    }
+  header {
+    display: flex;
+    justify-content: center;
+  }
+  .logo {
+    width: 40%;
+    margin: 15% auto;
+  }
+  .box1 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: none;
+    text-align: center;
+    align-items: center;
+  }
+  .title {
+    font-size: 1.625rem;
+    line-height: 2.375rem;
+  }
+  .text {
+    margin-bottom: 1rem;
+  }
+  .buttons {
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    flex-basis: 22%;
+    order: 1;
+  }
+  .flexLogos {
+    margin-bottom: 3rem;
+  }
+  .miniLogo {
+    width: 20%;
+  }
+  .email {
+    padding: 4% 0;
+    flex-basis: 95%;
+  }
+  .btn {
+    padding: 4%;
+    right: 0;
+    flex-basis: 95%;
+  }
+  .errorShown {
+    margin-top: 0;
+    margin-bottom: 10rem;
+  }
+}
